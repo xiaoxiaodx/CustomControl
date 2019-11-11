@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MyDashBord.qml</file>
+        <file>MyButton.qml</file>
+        <file>image/Button.png</file>
+        <file>QmlTabButton.qml</file>
+        <file>image/ButtnEnter.png</file>
+        <file>MyTabBarButton.qml</file>
+        <file>image/dashbord.png</file>
+    </qresource>
+</RCC>
