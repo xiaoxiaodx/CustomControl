@@ -17,7 +17,8 @@ SOURCES += \
     dashboard/dashbord0.cpp \
     dashboard/dashbord1.cpp \
     dashboard/dashbord2.cpp \
-    dashboard/dashbord3.cpp
+    dashboard/dashbord3.cpp \
+    dashboard/dashbord4.cpp
 
 RESOURCES += qml.qrc
 
@@ -37,4 +38,5 @@ HEADERS += \
     util.h \
     dashboard/dashbord1.h \
     dashboard/dashbord2.h \
-    dashboard/dashbord3.h
+    dashboard/dashbord3.h \
+    dashboard/dashbord4.h

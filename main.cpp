@@ -4,6 +4,7 @@
 #include "dashboard/dashbord1.h"
 #include "dashboard/dashbord2.h"
 #include "dashboard/dashbord3.h"
+#include "dashboard/dashbord4.h"
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<Dashbord1>("Dashbord1", 1, 0, "Dashbord1");
     qmlRegisterType<Dashbord2>("Dashbord2", 1, 0, "Dashbord2");
     qmlRegisterType<Dashbord3>("Dashbord3", 1, 0, "Dashbord3");
+    qmlRegisterType<Dashbord4>("Dashbord4", 1, 0, "Dashbord4");
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
