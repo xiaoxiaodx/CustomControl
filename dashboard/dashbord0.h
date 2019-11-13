@@ -2,19 +2,17 @@
 #define Dashbord0_H
 
 #include <QObject>
-#include <QQuickPaintedItem>
-#include <QPainter>
 #include <QPointF>
 #include <QDebug>
 #include <QPolygon>
 #include <QTimer>
-
+#include "drawbase.h"
 #include "util.h"
 /*
  * 绘制一个简单的仪表盘
 */
 
-class Dashbord0 : public QQuickPaintedItem
+class Dashbord0 : public DrawBase
 {
     Q_OBJECT
 public:
@@ -47,12 +45,6 @@ protected:
 private:
 
 
-
-
-    //    int m_centerX;
-    //    int m_centerY;
-    //    int m_radius;
-    //   bool isClockwise;//是否顺时针
 
 };
 

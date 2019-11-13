@@ -155,7 +155,7 @@ void Dashbord3::drawIndicator(QPainter *painter)
 
     qreal indicatorRingBigRadius = rect.width()+5;
     normalArc(painter,indicatorRingBigRadius,0,360,5,m_indicatorColor);
-    drawText1(painter,20,0,-5,"#000000",QString::number(m_value));
+    drawText1(painter,20,0,-5,"#000000",QString::number(m_value),m_scaleW);
 
 
     QPainterPath painterPath;
@@ -183,132 +183,8 @@ void Dashbord3::drawIndicator(QPainter *painter)
 }
 
 
-void Dashbord3::drawReflective(QPainter *painter,int tradius)
-{
 
 
-    int radius1R = tradius,radius2R = 1.6*tradius;
-    int startAngle1 = 20,endAngle1 = 190;
-    int deAngle1 = endAngle1 - startAngle1;
-
-
-    //正弦定理 k
-    qreal sinK = radius2R/sin(pi*(180-deAngle1/2)/180);
-    qreal halfdeAngle2 = asin(radius1R/sinK) * 180/pi;
-    qreal deAngle2 = 2*halfdeAngle2;
-    qreal startAngle2 = startAngle1 + deAngle1/2 - deAngle2/2;
-    qreal endAngle2 = startAngle2 + deAngle2;
-    //2圆心的距离
-    qreal deRadius = sinK * sin(pi*(deAngle1/2 - deAngle2/2)/180);
-
-    //第二个圆的圆心位置-------第一个圆的原点在（0,0）
-    int radius2X = 0 + deRadius*cos(pi*(180-deAngle1/2-startAngle1)/180);
-    int radius2Y = 0 + deRadius*sin(pi*(180-deAngle1/2-startAngle1)/180);
-    QPainterPath path;
-    QRectF rect(-tradius, -tradius, tradius *2 , tradius * 2);
-    path.arcTo(rect, startAngle1, deAngle1);
-
-
-   // qDebug()<<" radius2X:"<<radius2X<<"  radius2Y:"<<radius2Y<<"  radius2R:"<<radius2R<<"   deAngle1:"<<deAngle1<<" deAngle2:"<<deAngle2<<" "<<180-deAngle1/2-startAngle1;
-    QPainterPath subPath;
-    subPath.addEllipse(radius2X - radius2R,radius2Y-radius2R,radius2R*2,radius2R*2);
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->save();
-    painter->setPen(Qt::NoPen);
-    painter->setBrush(QBrush(QColor("#44ffffff")));
-    painter->drawPath(path);
-    painter->restore();
-}
-
-void Dashbord3::normalArc(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QColor color)
-{
-    painter->setBrush(color);
-
-    // << 1（左移1位）相当于radius*2 即：150*2=300
-    //QRectF(-150, -150, 300, 300)
-    QRectF rect(-radius, -radius, radius << 1, radius << 1);
-    QPainterPath path;
-    path.arcTo(rect, startAngle, angleLength);
-
-    // QRectF(-120, -120, 240, 240)
-    QPainterPath subPath;
-    subPath.addEllipse(rect.adjusted(arcHeight, arcHeight, -arcHeight, -arcHeight));
-
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->setPen(Qt::NoPen);
-    painter->drawPath(path);
-}
-
-
-
-
-void Dashbord3::gradientArc(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QColor color)
-{
-    // 渐变色
-    QRadialGradient gradient(0, 0, radius);
-    gradient.setColorAt(0, Qt::white);
-    gradient.setColorAt(1.0, color);
-
-    painter->setBrush(gradient);
-
-    // << 1（左移1位）相当于radius*2 即：150*2=300
-    //QRectF(-150, -150, 300, 300)
-    QRectF rect(-radius, -radius, radius << 1, radius << 1);
-    QPainterPath path;
-    path.arcTo(rect, startAngle, angleLength);
-
-    // QRectF(-120, -120, 240, 240)
-    QPainterPath subPath;
-    subPath.addEllipse(rect.adjusted(arcHeight, arcHeight, -arcHeight, -arcHeight));
-
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->setPen(Qt::NoPen);
-    painter->drawPath(path);
-}
-
-void Dashbord3::gradientArc1(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QGradient gradient)
-{
-    painter->setBrush(gradient);
-
-    // << 1（左移1位）相当于radius*2 即：150*2=300
-    //QRectF(-150, -150, 300, 300)
-    QRectF rect(-radius, -radius, radius << 1, radius << 1);
-    QPainterPath path;
-    path.arcTo(rect, startAngle, angleLength);
-
-    // QRectF(-120, -120, 240, 240)
-    QPainterPath subPath;
-    subPath.addEllipse(rect.adjusted(arcHeight, arcHeight, -arcHeight, -arcHeight));
-
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->setPen(Qt::NoPen);
-    painter->drawPath(path);
-
-}
-
-void Dashbord3::drawText1(QPainter *painter,int size,qreal tX,qreal tY,QString colorStr,QString str)
-{
-
-    painter->save();
-    QFont font;
-    font.setPixelSize(size);
-    painter->setFont(font);
-
-    QFontMetrics fm(font);
-    QRect rect = fm.boundingRect(str);
-
-    painter->setPen(QPen(QBrush(QColor(colorStr)),m_scaleW));
-    painter->drawText(tX-rect.width()/2,tY+rect.height()/2,str);
-    painter->restore();
-}
 
 void Dashbord3::mousePressEvent(QMouseEvent* event)
 {

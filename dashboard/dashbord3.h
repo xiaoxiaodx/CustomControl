@@ -8,15 +8,15 @@
 #include <QDebug>
 #include <QPolygon>
 #include <QTimer>
-
+#include "drawbase.h"
 #include "util.h"
 /*
  * 绘制一个圆环仪表盘
 */
 
-#define pi 3.1415926
 
-class Dashbord3 : public QQuickPaintedItem
+
+class Dashbord3 : public DrawBase
 {
     Q_OBJECT
 public:
@@ -64,11 +64,6 @@ protected:
 
 
 private:
-    void gradientArc(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QColor color);
-    void normalArc(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QColor color);
-    void gradientArc1(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QGradient gradient);
-    void drawText1(QPainter *painter,int size,qreal tX,qreal tY,QString colorStr,QString str);
-    void drawReflective(QPainter *painter,int tradius);
     int minAngle ;
     int maxAngle;
 

@@ -10,11 +10,12 @@
 #include <QTimer>
 
 #include "util.h"
+#include "drawbase.h"
 /*
  * 绘制一个圆环仪表盘
 */
 
-class Dashbord1 : public QQuickPaintedItem
+class Dashbord1 : public DrawBase
 {
     Q_OBJECT
 public:

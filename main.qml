@@ -9,9 +9,6 @@ Window {
     title: qsTr("Hello World")
 
 
-
-
-
     Rectangle{
         id:recttabbarBtn
         height: parent.height
@@ -29,6 +26,7 @@ Window {
 
                 tabbarBtn.barModel.append({txtStr:qsTr("按钮"),imgSrc:"qrc:/image/Button.png",imgSrcEnter:"qrc:/image/ButtnEnter.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("仪表盘"),imgSrc:"qrc:/image/dashbord.png",imgSrcEnter:"qrc:/image/dashbord.png"})
+                tabbarBtn.barModel.append({txtStr:qsTr("进度条"),imgSrc:"qrc:/image/processBar.png",imgSrcEnter:"qrc:/image/processBar.png"})
 
 
 
@@ -47,11 +45,16 @@ Window {
 
 
         MyButton{
+
         }
         MyDashBord{
             id:configerneral
+            color: "#aabfbfbf"
+        }
 
-
+        MyProgressbar{
+            id:myProgressbar
+            //color: "red"
         }
 
 

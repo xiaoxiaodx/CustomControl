@@ -18,7 +18,9 @@ SOURCES += \
     dashboard/dashbord1.cpp \
     dashboard/dashbord2.cpp \
     dashboard/dashbord3.cpp \
-    dashboard/dashbord4.cpp
+    dashboard/dashbord4.cpp \
+    progressbar/progressbar0.cpp \
+    drawbase.cpp
 
 RESOURCES += qml.qrc
 
@@ -39,4 +41,6 @@ HEADERS += \
     dashboard/dashbord1.h \
     dashboard/dashbord2.h \
     dashboard/dashbord3.h \
-    dashboard/dashbord4.h
+    dashboard/dashbord4.h \
+    progressbar/progressbar0.h \
+    drawbase.h

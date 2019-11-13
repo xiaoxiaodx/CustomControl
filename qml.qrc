@@ -8,5 +8,7 @@
         <file>image/ButtnEnter.png</file>
         <file>MyTabBarButton.qml</file>
         <file>image/dashbord.png</file>
+        <file>image/processBar.png</file>
+        <file>MyProgressbar.qml</file>
     </qresource>
 </RCC>

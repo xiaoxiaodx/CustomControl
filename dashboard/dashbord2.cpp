@@ -112,75 +112,6 @@ void Dashbord2::drawBg(QPainter *painter)
     }
 }
 
-void Dashbord2::normalArc(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QColor color)
-{
-    painter->setBrush(color);
-
-    // << 1（左移1位）相当于radius*2 即：150*2=300
-    //QRectF(-150, -150, 300, 300)
-    QRectF rect(-radius, -radius, radius << 1, radius << 1);
-    QPainterPath path;
-    path.arcTo(rect, startAngle, angleLength);
-
-    // QRectF(-120, -120, 240, 240)
-    QPainterPath subPath;
-    subPath.addEllipse(rect.adjusted(arcHeight, arcHeight, -arcHeight, -arcHeight));
-
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->setPen(Qt::NoPen);
-    painter->drawPath(path);
-}
-
-void Dashbord2::gradientArc(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QColor color)
-{
-    // 渐变色
-    QRadialGradient gradient(0, 0, radius);
-    gradient.setColorAt(0, Qt::white);
-    gradient.setColorAt(1.0, color);
-
-    painter->setBrush(gradient);
-
-    // << 1（左移1位）相当于radius*2 即：150*2=300
-    //QRectF(-150, -150, 300, 300)
-    QRectF rect(-radius, -radius, radius << 1, radius << 1);
-    QPainterPath path;
-    path.arcTo(rect, startAngle, angleLength);
-
-    // QRectF(-120, -120, 240, 240)
-    QPainterPath subPath;
-    subPath.addEllipse(rect.adjusted(arcHeight, arcHeight, -arcHeight, -arcHeight));
-
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->setPen(Qt::NoPen);
-    painter->drawPath(path);
-}
-
-void Dashbord2::gradientArc1(QPainter *painter, int radius, int startAngle, int angleLength, int arcHeight, QGradient gradient)
-{
-    painter->setBrush(gradient);
-
-    // << 1（左移1位）相当于radius*2 即：150*2=300
-    //QRectF(-150, -150, 300, 300)
-    QRectF rect(-radius, -radius, radius << 1, radius << 1);
-    QPainterPath path;
-    path.arcTo(rect, startAngle, angleLength);
-
-    // QRectF(-120, -120, 240, 240)
-    QPainterPath subPath;
-    subPath.addEllipse(rect.adjusted(arcHeight, arcHeight, -arcHeight, -arcHeight));
-
-    // path为扇形 subPath为椭圆
-    path -= subPath;
-
-    painter->setPen(Qt::NoPen);
-    painter->drawPath(path);
-
-}
-
 void Dashbord2::drawIndicator(QPainter *painter)
 {
     painter->setBrush(QBrush(QColor(m_indicatorColor)));
@@ -217,7 +148,7 @@ void Dashbord2::drawIndicator(QPainter *painter)
     normalArc(painter,triangleLen,0,360,triangleLen,m_indicatorColor);
     normalArc(painter,triangleLen+5,0,360,10,"#88f84c74");
 
-    drawText1(painter,30,0,(m_innerRadius-20),"#ffffff",QString::number(m_value));
+    drawText1(painter,30,0,(m_innerRadius-20),"#ffffff",QString::number(m_value),m_scaleW);
 
     //一段颜色都有3种颜色渐变
      qreal diffOuterRingInnerRight = m_outerRingSmallRadius - m_innerRadius;
@@ -248,21 +179,6 @@ void Dashbord2::drawIndicator(QPainter *painter)
 
 }
 
-void Dashbord2::drawText1(QPainter *painter,int size,qreal tX,qreal tY,QString colorStr,QString str)
-{
-
-    painter->save();
-    QFont font;
-    font.setPixelSize(size);
-    painter->setFont(font);
-
-    QFontMetrics fm(font);
-    QRect rect = fm.boundingRect(str);
-
-    painter->setPen(QPen(QBrush(QColor(colorStr)),m_scaleW));
-    painter->drawText(tX-rect.width()/2,tY+rect.height()/2,str);
-    painter->restore();
-}
 
 void Dashbord2::mousePressEvent(QMouseEvent* event)
 {
