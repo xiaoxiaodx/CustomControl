@@ -1,4 +1,3 @@
-
 #include "Progressbar0.h"
 #include "math.h"
 
@@ -48,17 +47,17 @@ void Progressbar0::drawBg(QPainter *painter)
 
         painter->translate(m_centerX,m_centerY);
 
-        if(m_isScaleBaer){
-
+        if(m_isScaleBaer)
             normalArc(painter,m_radiusSmall,0,360,m_radiusSmall,m_bgColor);
-
-        }else {
+        else
             normalArc(painter,m_radiusBig,0,360,m_radiusBig,m_bgColor);
-
-        }
 
     }else if(m_processtype == 1){
 
+
+        painter->setPen(Qt::NoPen);
+        painter->setBrush(QColor(m_bgColor));
+        painter->drawRect(m_bordW,m_bordW,m_mWidth-m_bordW*2,m_mHeight-m_bordW*2);
 
     }
 }
@@ -73,76 +72,22 @@ void Progressbar0::drawValue(QPainter *painter)
         qreal angleOffset = 360*kValue;
         qreal offsetY = 2*kValue*m_radiusSmall;
         qreal valueY = m_radiusSmall - offsetY;
-        qreal valueX1 = sqrt(m_radiusSmall*m_radiusSmall - valueY*valueY);//正半轴
-        qreal valueX2 = -valueX1;
-
-
-
-        qreal angle1 = asin(valueY/m_radiusSmall)*180/pi;//正半轴的角度
-        qreal angle2 ;
-        if(valueY>0)
-            angle2 = 180 - angle1;
-        else
-            angle2 =  - 180 - angle1;;
-        //qDebug()<<"value    *** "<<valueX1<<"   "<<valueX2<<"   "<<valueY<<"    "<<angle1<<"    "<<angle2;
 
         if(m_isClockwise)
             normalArc(painter,m_radiusBig,0,angleOffset,m_bordW,m_bordColor);
         else
             normalArc(painter,m_radiusBig,0,-angleOffset,m_bordW,m_bordColor);
 
-
-        if(m_isWave){
-
-            QPainterPath wave1; //波浪区域
-            wave1.moveTo(valueX2,valueY);
-            if(valueY<=0)
-                wave1.arcTo(-m_radiusSmall,-m_radiusSmall,m_radiusSmall*2,m_radiusSmall*2,-angle2,180+2*abs(angle1));
-            else
-                wave1.arcTo(-m_radiusSmall,-m_radiusSmall,m_radiusSmall*2,m_radiusSmall*2,-angle2,angle2-angle1);
-
-            for(int x = m_radiusSmall; x >= -m_radiusSmall; x-=1)  //x从0~w的值而改变，从而得到正弦曲线
-            {
-                qreal waveY = (double)(m_waveA * sin(m_waveP * x + m_offset))-m_waveA ;// waveY随着x的值改变而改变，从而得到正弦曲线
-                qreal actualY = waveY+valueY;
-                if((x*x + actualY*actualY)>(m_radiusSmall*m_radiusSmall)){//不在园内不加入绘制路径
-                    continue;
-                }
-                wave1.lineTo(x, actualY);   //从上一个绘制点画一条线到（x，waveY
-            }
-            painter->setBrush(QColor(m_fgColor)); //填充绿色
-            painter->drawPath(wave1);      //绘制出图形
-
-
-
-            QPainterPath wave2; //波浪区域
-            wave2.moveTo(valueX2,valueY);
-            if(valueY<=0)
-                wave2.arcTo(-m_radiusSmall,-m_radiusSmall,m_radiusSmall*2,m_radiusSmall*2,-angle2,180+2*abs(angle1));
-            else
-                wave2.arcTo(-m_radiusSmall,-m_radiusSmall,m_radiusSmall*2,m_radiusSmall*2,-angle2,angle2-angle1);
-
-            for(int x = m_radiusSmall; x >= -m_radiusSmall; x-=1)  //x从0~w的值而改变，从而得到正弦曲线
-            {
-                qreal waveY = (double)(m_waveA * sin(m_waveP * x + m_offset2))-m_waveA ;// waveY随着x的值改变而改变，从而得到正弦曲线
-                qreal actualY = waveY+valueY;
-                if((x*x + actualY*actualY)>(m_radiusSmall*m_radiusSmall)){//不在园内不加入绘制路径
-                    continue;
-                }
-                wave2.lineTo(x, actualY);   //从上一个绘制点画一条线到（x，waveY
-            }
-            painter->setBrush(QColor("#77e8989a")); //填充绿色
-            painter->drawPath(wave2);      //绘制出图形
-        }
-
-
+        drawRadiusWave(painter,m_centerX,m_centerY,m_radiusSmall,valueY,m_waveA,m_waveP,m_offset,m_offset2,m_fgColor);
 
         drawText1(painter,100,0,-5,m_fontColor,QString::number(m_value)+"%",10);
 
 
     }else if(m_processtype == 1){
 
-
+        qreal valueY = m_bordW+m_mHeight - m_mHeight*((qreal)m_value)/100;
+        drawRectWave(painter,m_bordW,m_bordW,m_mWidth-m_bordW*2,m_mHeight-m_bordW*2, valueY,m_waveA,m_waveP,m_offset,m_offset2, m_fgColor);
+        drawText1(painter,100,width()/2,height()/2-5,m_fontColor,QString::number(m_value)+"%",10);
     }
 }
 

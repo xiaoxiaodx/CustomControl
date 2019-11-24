@@ -19,7 +19,7 @@ Column {
             height: 60
             txtColor:"white"
             flagColor:curIndex == index?"red":"#00000000"
-            bgColor:"black"
+            bgColor:"#313131"
             bgColorEnter:"#dd8a8a8a"
             txtStr: model.txtStr
             imgSrc: model.imgSrc

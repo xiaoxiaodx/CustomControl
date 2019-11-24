@@ -2,6 +2,7 @@ import QtQuick 2.0
 
 import Progressbar0 1.0
 import QtQuick.Controls 2.5
+
 Rectangle {
     id:root
 
@@ -25,18 +26,18 @@ Rectangle {
                     fgColor: "#e8989a"
                     bordColor: "#dc4151"
                     processtype:0
-                    isClockwise:true
+                    isClockwise:false
                     isWave:true
                     value:70
                     waveA:5
                     waveP:0.1
                     fontColor:"#ffffff"
-
+                    bordW: 4
 
                     //圆属性
                     isScaleBaer:true
                     radiusBig:width>height?height/2-4:width/2-4
-                    bordW: 4
+
                     radiusSmall: radiusBig-bordW - 2
                     centerX:width/2
                     centerY: height/2
@@ -87,6 +88,16 @@ Rectangle {
 
                             progressbar0.value = value
 
+                        }
+                    }
+                    Switch{
+                        anchors.horizontalCenter: parent.horizontalCenter
+
+                        onCheckedChanged: {
+                            if(checked)
+                                progressbar0.processtype = 1;
+                            else
+                                progressbar0.processtype = 0;
                         }
                     }
 

@@ -153,3 +153,134 @@ void DrawBase::drawReflective(QPainter *painter,int tradius)
     painter->drawPath(path);
     painter->restore();
 }
+
+/*
+ * 在圆形里面绘制一个带波浪的进度条
+ *
+ * 默认圆心位置为控件的中心，切Y正方形向下
+ *
+ * radius：圆半径
+ * valueY：由上往下，进度条的值所在的Y值
+ * A：正弦波浪的振幅
+ * W：正弦波浪的周期
+ * P1：正弦波浪的相位
+ * P2：正弦波浪的相位
+ * color:所绘制图形的颜色
+ *
+*/
+void DrawBase::drawRadiusWave(QPainter *painter,qreal radiusCenterX,qreal radiusCenterY,qreal radius,qreal valueY,qreal A,qreal W,qreal P1,qreal P2,QString color)
+{
+
+    painter->save();
+    qreal valueX1 = sqrt(radius*radius - valueY*valueY);//正半轴
+    qreal valueX2 = -valueX1;
+
+    qreal angle1 = asin(valueY/radius)*180/pi;//正半轴的角度
+    qreal angle2 ;
+    if(valueY>0)
+        angle2 = 180 - angle1;
+    else
+        angle2 =  - 180 - angle1;;
+
+
+
+        QPainterPath wave1; //波浪区域
+        wave1.moveTo(valueX2,valueY);
+        if(valueY<=0)
+            wave1.arcTo(-radius,-radius,radius*2,radius*2,-angle2,180+2*abs(angle1));
+        else
+            wave1.arcTo(-radius,-radius,radius*2,radius*2,-angle2,angle2-angle1);
+
+        for(int x = radius; x >= -radius; x-=1)  //x从0~w的值而改变，从而得到正弦曲线
+        {
+            qreal waveY = (double)(A * sin(W * x + P1))-A ;// waveY随着x的值改变而改变，从而得到正弦曲线
+            qreal actualY = waveY+valueY;
+            if((x*x + actualY*actualY)>(radius*radius)){//不在园内不加入绘制路径
+                continue;
+            }
+            wave1.lineTo(x, actualY);   //从上一个绘制点画一条线到（x，waveY
+        }
+        painter->setBrush(QColor(color));
+        painter->drawPath(wave1);      //绘制出图形
+
+
+
+        QPainterPath wave2; //波浪区域
+        wave2.moveTo(valueX2,valueY);
+        if(valueY<=0)
+            wave2.arcTo(-radius,-radius,radius*2,radius*2,-angle2,180+2*abs(angle1));
+        else
+            wave2.arcTo(-radius,-radius,radius*2,radius*2,-angle2,angle2-angle1);
+
+        for(int x = radius; x >= -radius; x-=1)  //x从0~w的值而改变，从而得到正弦曲线
+        {
+            qreal waveY = (double)(A * sin(W * x + P2))-A ;// waveY随着x的值改变而改变，从而得到正弦曲线
+            qreal actualY = waveY+valueY;
+            if((x*x + actualY*actualY)>(radius*radius)){//不在园内不加入绘制路径
+                continue;
+            }
+            wave2.lineTo(x, actualY);   //从上一个绘制点画一条线到（x，waveY
+        }
+        QString tmpColor = color.insert(1,"77");
+        painter->setBrush(QColor(tmpColor));
+        painter->drawPath(wave2);
+        painter->restore();
+}
+
+/*
+ * 在矩形里面绘制一个带波浪的进度条
+ *
+ * 默认坐标的位置为
+ *
+ * startX：矩形起始位置X
+ * startY：矩形起始位置Y
+ * w:矩形宽度
+ * h:矩形高度
+ * valueY:值所在的Y值坐标
+ * A：正弦波浪的振幅
+ * W：正弦波浪的周期
+ * P1：正弦波浪的相位
+ * P2：正弦波浪的相位
+ * color:所绘制图形的颜色
+ *
+*/
+void DrawBase::drawRectWave(QPainter *painter,qreal startX,qreal startY,qreal w,qreal h,qreal valueY,qreal A,qreal W,qreal P1,qreal P2,QString color)
+{
+
+    painter->save();
+    painter->setPen(Qt::NoPen);
+
+
+    QPainterPath wave1; //波浪区域
+
+    wave1.moveTo(startX,valueY);
+    for(int x = startX; x <= (startX+w); x+=1)  //x从0~w的值而改变，从而得到正弦曲线
+    {
+        qreal waveY = (double)(A * sin(W * x + P1))-A ;// waveY随着x的值改变而改变，从而得到正弦曲线
+        qreal actualY = waveY+valueY;
+
+        wave1.lineTo(x, actualY);   //从上一个绘制点画一条线到（x，waveY
+    }
+    wave1.lineTo(startX+w, startY+h);
+    wave1.lineTo(startX,startY+h);
+    painter->setBrush(QColor(color));
+    painter->drawPath(wave1);      //绘制出图形
+
+
+
+    QPainterPath wave2; //波浪区域
+    wave2.moveTo(startX,valueY);
+    for(int x = startX; x <= (startX+w); x+=1)  //x从0~w的值而改变，从而得到正弦曲线
+    {
+        qreal waveY = (double)(A * sin(W * x + P2))-A ;// waveY随着x的值改变而改变，从而得到正弦曲线
+        qreal actualY = waveY+valueY;
+
+        wave2.lineTo(x, actualY);   //从上一个绘制点画一条线到（x，waveY
+    }
+    wave2.lineTo(startX+w, startY+h);
+    wave2.lineTo(startX,startY+h);
+    QString tmpColor = color.insert(1,"77");
+    painter->setBrush(QColor(tmpColor)); //填充绿色
+    painter->drawPath(wave2);      //绘制出图形
+    painter->restore();
+}

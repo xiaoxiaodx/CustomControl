@@ -10,5 +10,20 @@
         <file>image/dashbord.png</file>
         <file>image/processBar.png</file>
         <file>MyProgressbar.qml</file>
+        <file>Button/Button0.qml</file>
+        <file>HomeTitleBar.qml</file>
+        <file>MainContent.qml</file>
+        <file>image/wClose.png</file>
+        <file>image/wClose_enter.png</file>
+        <file>image/wMax.png</file>
+        <file>image/wMax_enter.png</file>
+        <file>image/wMin.png</file>
+        <file>image/wMin_enter.png</file>
+        <file>Button/ImgTxtButton.qml</file>
+        <file>Button/WaveButton.qml</file>
+        <file>image/btnTest.png</file>
+        <file>Button/MyCheckBox.qml</file>
+        <file>image/select.png</file>
+        <file>image/unselect.png</file>
     </qresource>
 </RCC>
