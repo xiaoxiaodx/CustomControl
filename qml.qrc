@@ -25,5 +25,23 @@
         <file>Button/MyCheckBox.qml</file>
         <file>image/select.png</file>
         <file>image/unselect.png</file>
+        <file>Button/TabBarButtonH.qml</file>
+        <file>Button/TabBarButtonV.qml</file>
+        <file>Button/Button1.qml</file>
+        <file>Button/Button2.qml</file>
+        <file>Button/SwitchButton.qml</file>
+        <file>Button/Button3.qml</file>
+        <file>Button/ComBox.qml</file>
+        <file>Button/Button4.qml</file>
+        <file>text/LineEdit.qml</file>
+        <file>text/Text0.qml</file>
+        <file>MyText.qml</file>
+        <file>image/text.png</file>
+        <file>dashbordui/Dashbord1.qml</file>
+        <file>dashbordui/Dashbord2.qml</file>
+        <file>dashbordui/Dashbord3.qml</file>
+        <file>dashbordui/Dashbord0.qml</file>
+        <file>dashbordui/Dashbord4.qml</file>
+        <file>progressbarui/Processbar0.qml</file>
     </qresource>
 </RCC>

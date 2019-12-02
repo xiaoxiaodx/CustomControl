@@ -23,17 +23,15 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 20
 
-        isSelect: true
         isNeedWave: true
         waveColor: "#1296db"
 
         haveTxt:true
-        txtStr: qsTr("测试")
+        textStr: qsTr("测试")
         txtX: 15
         txtY:10
         txtFontPixSize: 20
         txtOffset: 1
-        txtSelectColor:"gray"
         txtHoverColor:"#bbbbbb"
 
         haveImg: true
@@ -86,23 +84,6 @@ Rectangle {
                     btn.haveImg = true
                 else
                     btn.haveImg = false
-            }
-        }
-        MyCheckBox {
-            id:checkSelect
-            checked: true
-            text: qsTr("是否选中")
-            txtColorNor:"#8a8a8a"
-            txtColorSelect: "#409EFF"
-            font.pixelSize: 20
-            spacing: 10
-            checkedSrc:"qrc:/image/select.png"
-            uncheckedSrc: "qrc:/image/unselect.png"
-            onCheckedChanged: {
-                if(checkSelect.checked)
-                    btn.isSelect = true
-                else
-                    btn.isSelect = false
             }
         }
         MyCheckBox {

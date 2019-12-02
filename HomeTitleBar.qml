@@ -80,12 +80,10 @@ Rectangle {
                 height: 36
 
                 btnBgColor:"black"
-                isSelect: false
+
                 isNeedWave: false
                 haveImg: true
                 haveTxt: false
-//                imgX: 2
-//                imgY: 2
                 imgNorSrc:"qrc:/image/wMin.png"
                 imgHoverSrc: "qrc:/image/wMin_enter.png"
                 onClick: winMin()
@@ -94,15 +92,10 @@ Rectangle {
             ImgTxtButton{
                 width: 36
                 height: 36
-
                 btnBgColor:"black"
-
-                isSelect: false
                 isNeedWave: false
                 haveTxt: false
                 haveImg: true
-//                imgX: 2
-//                imgY:2
                 imgNorSrc: "qrc:/image/wMax.png"
                 imgHoverSrc:  "qrc:/image/wMax_enter.png"
 
@@ -111,17 +104,13 @@ Rectangle {
             }
 
             ImgTxtButton{
-
                 id:btn1
                 width: 36
                 height: 36
-
                 btnBgColor:"black"
-                isSelect: false
                 isNeedWave: false
                 haveImg: true
                 haveTxt: false
-
                 imgNorSrc:"qrc:/image/wClose.png"
                 imgHoverSrc: "qrc:/image/wClose_enter.png"
                 onClick: winClose()

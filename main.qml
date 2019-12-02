@@ -1,7 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
-
 import QtQuick.Controls 2.5
+
 Window {
 
     id: main;
@@ -67,10 +67,9 @@ Window {
             Component.onCompleted: {
 
                 tabbarBtn.barModel.append({txtStr:qsTr("按钮"),imgSrc:"qrc:/image/Button.png",imgSrcEnter:"qrc:/image/ButtnEnter.png"})
+                tabbarBtn.barModel.append({txtStr:qsTr("文本"),imgSrc:"qrc:/image/text.png",imgSrcEnter:"qrc:/image/text.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("仪表盘"),imgSrc:"qrc:/image/dashbord.png",imgSrcEnter:"qrc:/image/dashbord.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("进度条"),imgSrc:"qrc:/image/processBar.png",imgSrcEnter:"qrc:/image/processBar.png"})
-
-
 
             }
         }
@@ -95,16 +94,39 @@ Window {
 
             Component.onCompleted: {
                 myButton.myModel.append({qmlSrc:"qrc:/Button/Button0.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/Button/Button1.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/Button/Button2.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/Button/Button3.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/Button/Button4.qml"})
+            }
+        }
+        MyText{
+            id:myText
+
+            Component.onCompleted: {
+                myText.myModel.append({qmlSrc:"qrc:/text/Text0.qml"})
 
             }
         }
         MyDashBord{
-            id:configerneral
-            color: "#aabfbfbf"
+            id:myDashBord
+            Component.onCompleted: {
+                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord0.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord1.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord2.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord3.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord4.qml"})
+
+            }
         }
 
         MyProgressbar{
             id:myProgressbar
+            Component.onCompleted: {
+                myProgressbar.myModel.append({qmlSrc:"qrc:/progressbarui/Processbar0.qml"})
+
+
+            }
             //color: "red"
         }
 

@@ -7,14 +7,14 @@ import QtQuick 2.0
     2、选中
     3、波浪
     4、文字点击效果
-   注意:选中效果必须独立使用，在使用按下或者滑动效果时应该避免使用选中效果显示
+   注意:选中效果必须独立使用(有选中效果就不应该在有滑动效果)，在使用按下或者滑动效果时应该避免使用选中效果显示
 */
 Rectangle {
     id:root
 
     property string btnBgColor: "#409EFF"
-
-    property bool isSelect: true
+    property string btnPressBgColor: btnBgColor
+    property string btnHoverBgColor: btnBgColor
 
     property alias isNeedWave: wave.haveWave
     property alias waveColor: wave.waveColor
@@ -25,10 +25,10 @@ Rectangle {
     property string imgNorSrc: ""
     property string imgPressSrc: imgNorSrc
     property string imgHoverSrc: imgNorSrc
-    property string imgSelectSrc: imgNorSrc
+
 
     property bool haveTxt: false
-    property string txtStr: "test"
+    property alias textStr: txt.text
     property int txtOffset: 0//文字按下的偏移效果
     property alias txtX: txt.x
     property alias txtY: txt.y
@@ -36,11 +36,14 @@ Rectangle {
     property string txtNorColor: "white"
     property string txtPressColor: txtNorColor
     property string txtHoverColor: txtNorColor
-    property string txtSelectColor: txtNorColor
+
+
 
 
 
     signal click();
+
+
     WaveButton{
         id:wave
         width: parent.width
@@ -54,34 +57,36 @@ Rectangle {
         onLeftPressed: {
             objectPosOffset(txt,txtOffset)
 
-            if(!isSelect){
-                txt.color = txtPressColor
-                img.source = imgPressSrc
-            }
+
+            txt.color = txtPressColor
+            img.source = imgPressSrc
+            wave.color = btnPressBgColor
 
         }
         onLeftReleased: {
             objectPosOffset(txt,-txtOffset)
-            if(!isSelect){
-                txt.color = txtPressColor
-                img.source = imgPressSrc
-            }
+
+            txt.color = txtNorColor
+            img.source = imgNorSrc
+            wave.color = btnBgColor
+
 
         }
 
         onEnter: {
-            if(!isSelect){
-                txt.color = txtHoverColor
-                img.source = imgHoverSrc
-            }
+
+            txt.color = txtHoverColor
+            img.source = imgHoverSrc
+            wave.color = btnHoverBgColor
+
 
         }
 
         onExit: {
-            if(!isSelect){
-                txt.color = txtNorColor
-                img.source = imgNorSrc
-            }
+
+            txt.color = txtNorColor
+            img.source = imgNorSrc
+            wave.color = btnBgColor
         }
 
 
@@ -94,10 +99,10 @@ Rectangle {
         x:txtX
         y:txtY
         visible: haveTxt
-        color:isSelect?txtSelectColor:txtNorColor
+        color:txtNorColor
 
         font.pixelSize: txtFontPixSize
-        text: txtStr
+
     }
 
     Image {
@@ -105,7 +110,7 @@ Rectangle {
         x:imgX
         y:imgY
         visible: haveImg
-        source: isSelect?imgSelectSrc:imgNorSrc
+        source: imgNorSrc
     }
 
     function objectPosOffset(object,offset){
