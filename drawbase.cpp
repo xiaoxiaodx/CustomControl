@@ -284,3 +284,42 @@ void DrawBase::drawRectWave(QPainter *painter,qreal startX,qreal startY,qreal w,
     painter->drawPath(wave2);      //绘制出图形
     painter->restore();
 }
+
+
+void DrawBase::drawTriangle(QPainter *painter,int radius,int triangleLen,int angle,QString color)
+{
+
+    painter->save();
+
+    painter->setBrush(QBrush(QColor(color)));
+    painter->setPen(Qt::NoPen);
+
+    //假设指示器是一个边长为10的等边三角形
+    qreal indicatorTriangleLen = triangleLen;
+
+    qreal radius1 = sqrt((radius-indicatorTriangleLen)*(radius-indicatorTriangleLen) + indicatorTriangleLen*indicatorTriangleLen/4);
+
+    qreal halfAngle = asin(indicatorTriangleLen*sin(30)/radius1)*180/pi;
+
+    qreal angle1 = angle - halfAngle;
+    qreal angle2 = angle + halfAngle;
+
+    QPainterPath painterPath;
+
+    qreal pointTipX = radius * cos(3.1415926*angle/180);
+    qreal pointTipY = radius * sin(3.1415926*angle/180);
+
+    qreal point1X = radius1 * cos(3.1415926*angle1/180);
+    qreal point1Y = radius1 * sin(3.1415926*angle1/180);
+
+    qreal point2X = radius1 * cos(3.1415926*angle2/180);
+    qreal point2Y = radius1 * sin(3.1415926*angle2/180);
+
+    painterPath.moveTo(pointTipX,pointTipY);
+    painterPath.lineTo(point1X,point1Y);
+    painterPath.lineTo(point2X,point2Y);
+    painterPath.lineTo(pointTipX,pointTipY);
+
+    painter->drawPath(painterPath);
+    painter->restore();
+}

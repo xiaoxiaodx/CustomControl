@@ -147,36 +147,37 @@ void Dashbord4::drawIndicator(QPainter *painter)
 
     drawText1(painter,20,0,-3,"#000000",QString::number(m_value),m_scaleW);
 
+    drawTriangle(painter,m_outerRingSmallRadius - 10,10,mValueAngle,m_indicatorColor);
 
-    qreal indicatorTipRadius = m_outerRingSmallRadius - 10;
+//    qreal indicatorTipRadius = m_outerRingSmallRadius - 10;
 
-    //假设指示器是一个边长为10的等边三角形
-    qreal indicatorTriangleLen = 10;
+//    //假设指示器是一个边长为10的等边三角形
+//    qreal indicatorTriangleLen = 10;
 
-    qreal radius1 = sqrt((indicatorTipRadius-indicatorTriangleLen)*(indicatorTipRadius-indicatorTriangleLen) + indicatorTriangleLen*indicatorTriangleLen/4);
+//    qreal radius1 = sqrt((indicatorTipRadius-indicatorTriangleLen)*(indicatorTipRadius-indicatorTriangleLen) + indicatorTriangleLen*indicatorTriangleLen/4);
 
-    qreal halfAngle = asin(indicatorTriangleLen*sin(30)/radius1)*180/pi;
+//    qreal halfAngle = asin(indicatorTriangleLen*sin(30)/radius1)*180/pi;
 
-    qreal angle1 = mValueAngle - halfAngle;
-    qreal angle2 = mValueAngle + halfAngle;
+//    qreal angle1 = mValueAngle - halfAngle;
+//    qreal angle2 = mValueAngle + halfAngle;
 
-    QPainterPath painterPath;
+//    QPainterPath painterPath;
 
-    qreal pointTipX = indicatorTipRadius * cos(3.1415926*mValueAngle/180);
-    qreal pointTipY = indicatorTipRadius * sin(3.1415926*mValueAngle/180);
+//    qreal pointTipX = indicatorTipRadius * cos(3.1415926*mValueAngle/180);
+//    qreal pointTipY = indicatorTipRadius * sin(3.1415926*mValueAngle/180);
 
-    qreal point1X = radius1 * cos(3.1415926*angle1/180);
-    qreal point1Y = radius1 * sin(3.1415926*angle1/180);
+//    qreal point1X = radius1 * cos(3.1415926*angle1/180);
+//    qreal point1Y = radius1 * sin(3.1415926*angle1/180);
 
-    qreal point2X = radius1 * cos(3.1415926*angle2/180);
-    qreal point2Y = radius1 * sin(3.1415926*angle2/180);
+//    qreal point2X = radius1 * cos(3.1415926*angle2/180);
+//    qreal point2Y = radius1 * sin(3.1415926*angle2/180);
 
-    painterPath.moveTo(pointTipX,pointTipY);
-    painterPath.lineTo(point1X,point1Y);
-    painterPath.lineTo(point2X,point2Y);
-    painterPath.lineTo(pointTipX,pointTipY);
+//    painterPath.moveTo(pointTipX,pointTipY);
+//    painterPath.lineTo(point1X,point1Y);
+//    painterPath.lineTo(point2X,point2Y);
+//    painterPath.lineTo(pointTipX,pointTipY);
 
-    painter->drawPath(painterPath);
+//    painter->drawPath(painterPath);
 
 
 }

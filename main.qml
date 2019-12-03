@@ -116,6 +116,7 @@ Window {
                 myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord2.qml"})
                 myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord3.qml"})
                 myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord4.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord5.qml"})
 
             }
         }

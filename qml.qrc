@@ -43,5 +43,7 @@
         <file>dashbordui/Dashbord0.qml</file>
         <file>dashbordui/Dashbord4.qml</file>
         <file>progressbarui/Processbar0.qml</file>
+        <file>dashbordui/Dashbord5.qml</file>
+        <file>image/video.png</file>
     </qresource>
 </RCC>

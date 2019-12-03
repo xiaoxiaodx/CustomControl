@@ -28,6 +28,7 @@ public:
     void drawReflective(QPainter *painter,int tradius);
     void drawRadiusWave(QPainter *painter,qreal radiusCenterX,qreal radiusCenterY,qreal radius,qreal valueY,qreal A,qreal W,qreal P1,qreal P2,QString color);
     void drawRectWave(QPainter *painter,qreal startX,qreal startY,qreal w,qreal h,qreal valueY,qreal A,qreal W,qreal P1,qreal P2,QString color);
+    void drawTriangle(QPainter *painter,int radius,int triangleLen,int angle,QString color);
 };
 
 #endif // DRAWBASE_H
