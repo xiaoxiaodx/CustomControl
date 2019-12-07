@@ -70,6 +70,7 @@ Window {
                 tabbarBtn.barModel.append({txtStr:qsTr("文本"),imgSrc:"qrc:/image/text.png",imgSrcEnter:"qrc:/image/text.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("仪表盘"),imgSrc:"qrc:/image/dashbord.png",imgSrcEnter:"qrc:/image/dashbord.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("进度条"),imgSrc:"qrc:/image/processBar.png",imgSrcEnter:"qrc:/image/processBar.png"})
+                tabbarBtn.barModel.append({txtStr:qsTr("图表"),imgSrc:"qrc:/image/chart.png",imgSrcEnter:"qrc:/image/chart.png"})
 
             }
         }
@@ -125,6 +126,27 @@ Window {
             id:myProgressbar
             Component.onCompleted: {
                 myProgressbar.myModel.append({qmlSrc:"qrc:/progressbarui/Processbar0.qml"})
+
+
+            }
+            //color: "red"
+        }
+
+        MyChart{
+            id:myMyChart
+            Component.onCompleted: {
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartPie.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartScatterSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartLine.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartSpline.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartArea.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartBoxPlot.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartHorizontalBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartPercentBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartHorizontalPercentBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartStackedBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartHorizontalStackedBarSeries.qml"})
 
 
             }

@@ -17,6 +17,7 @@ Rectangle {
         anchors.leftMargin: 20
         anchors.top: parent.top
         anchors.topMargin: 20
+        checked: false
         bgColor: "#409EFF"
         onCheckedChange: console.debug("SwitchButton    "+checked)
     }
@@ -37,10 +38,13 @@ Rectangle {
         anchors.top: parent.top
         anchors.topMargin: 20
         onCheckedChanged: {
-            if(checkShowImg.checked)
+            if(checkShowImg.checked){
                 btn.isSurround = true
-            else
+
+            }else{
                 btn.isSurround = false
+
+            }
         }
     }
 }

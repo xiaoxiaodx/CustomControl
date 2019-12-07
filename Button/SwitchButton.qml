@@ -14,7 +14,7 @@ Rectangle {
 
     property int bgHeight: 2
 
-    property int deXY: 10
+    property int deXY: 2
 
     property bool isSurround:true
 
@@ -71,7 +71,7 @@ Rectangle {
     Timer{
         id:timer
         repeat: true
-        interval: 50
+        interval: 5
 
         onTriggered:{
 
@@ -104,5 +104,10 @@ Rectangle {
 
     }
 
+    function setChecked( isCheck){
+        checked = isCheck
+        timer.start()
+
+    }
 
 }

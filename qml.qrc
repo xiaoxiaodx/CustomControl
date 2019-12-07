@@ -45,5 +45,19 @@
         <file>progressbarui/Processbar0.qml</file>
         <file>dashbordui/Dashbord5.qml</file>
         <file>image/video.png</file>
+        <file>chart/ChartPie.qml</file>
+        <file>MyChart.qml</file>
+        <file>image/chart.png</file>
+        <file>chart/ChartArea.qml</file>
+        <file>chart/ChartBoxPlot.qml</file>
+        <file>chart/ChartHorizontalBarSeries.qml</file>
+        <file>chart/ChartHorizontalPercentBarSeries.qml</file>
+        <file>chart/ChartHorizontalStackedBarSeries.qml</file>
+        <file>chart/ChartSpline.qml</file>
+        <file>chart/ChartLine.qml</file>
+        <file>chart/ChartPercentBarSeries.qml</file>
+        <file>chart/ChartScatterSeries.qml</file>
+        <file>chart/ChartStackedBarSeries.qml</file>
+        <file>chart/ChartBarSeries.qml</file>
     </qresource>
 </RCC>
