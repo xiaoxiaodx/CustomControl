@@ -28,7 +28,6 @@
         <file>qml/text/LineEdit.qml</file>
         <file>qml/text/Text0.qml</file>
         <file>qml/progressbarui/Processbar0.qml</file>
-        <file>qml/particle/ParticleColor.qml</file>
         <file>qml/dashbordui/Dashbord1.qml</file>
         <file>qml/dashbordui/Dashbord2.qml</file>
         <file>qml/dashbordui/Dashbord3.qml</file>
@@ -61,5 +60,13 @@
         <file>qml/main.qml</file>
         <file>qml/QmlTabButton.qml</file>
         <file>qml/dashbordui/Dashbord0.qml</file>
+        <file>image/particle.png</file>
+        <file>image/star.png</file>
+        <file>qml/particle/Particle2.qml</file>
+        <file>qml/particle/Particle0.qml</file>
+        <file>qml/particle/Particle1.qml</file>
+        <file>image/particleA.png</file>
+        <file>image/matchmask.png</file>
+        <file>qml/particle/Particle3.qml</file>
     </qresource>
 </RCC>

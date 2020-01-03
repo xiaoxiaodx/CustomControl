@@ -71,6 +71,7 @@ Window {
                 tabbarBtn.barModel.append({txtStr:qsTr("仪表盘"),imgSrc:"qrc:/image/dashbord.png",imgSrcEnter:"qrc:/image/dashbord.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("进度条"),imgSrc:"qrc:/image/processBar.png",imgSrcEnter:"qrc:/image/processBar.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("图表"),imgSrc:"qrc:/image/chart.png",imgSrcEnter:"qrc:/image/chart.png"})
+                tabbarBtn.barModel.append({txtStr:qsTr("粒子效果"),imgSrc:"qrc:/image/particle.png",imgSrcEnter:"qrc:/image/particle.png"})
 
             }
         }
@@ -153,8 +154,19 @@ Window {
             //color: "red"
         }
 
-
+        MyParticle{
+            id:myParticle
+            Component.onCompleted: {
+                myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle0.qml"});
+                myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle1.qml"});
+                myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle2.qml"});
+                myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle3.qml"});
+            }
+        }
     }
+
+
+
 
 
 
