@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Dashbord3 1.0
-import "../Button"
+import "../button"
 import QtQuick.Controls 2.5
 Rectangle {
 

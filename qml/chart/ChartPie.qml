@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtCharts 2.0
 import QtCharts 2.3
 
-import "../Button"
+import "../button"
 Rectangle {
 
 

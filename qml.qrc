@@ -1,63 +1,65 @@
 <RCC>
     <qresource prefix="/">
-        <file>main.qml</file>
-        <file>MyDashBord.qml</file>
-        <file>MyButton.qml</file>
         <file>image/Button.png</file>
-        <file>QmlTabButton.qml</file>
         <file>image/ButtnEnter.png</file>
-        <file>MyTabBarButton.qml</file>
         <file>image/dashbord.png</file>
         <file>image/processBar.png</file>
-        <file>MyProgressbar.qml</file>
-        <file>Button/Button0.qml</file>
-        <file>HomeTitleBar.qml</file>
-        <file>MainContent.qml</file>
         <file>image/wClose.png</file>
         <file>image/wClose_enter.png</file>
         <file>image/wMax.png</file>
         <file>image/wMax_enter.png</file>
         <file>image/wMin.png</file>
         <file>image/wMin_enter.png</file>
-        <file>Button/ImgTxtButton.qml</file>
-        <file>Button/WaveButton.qml</file>
         <file>image/btnTest.png</file>
-        <file>Button/MyCheckBox.qml</file>
         <file>image/select.png</file>
         <file>image/unselect.png</file>
-        <file>Button/TabBarButtonH.qml</file>
-        <file>Button/TabBarButtonV.qml</file>
-        <file>Button/Button1.qml</file>
-        <file>Button/Button2.qml</file>
-        <file>Button/SwitchButton.qml</file>
-        <file>Button/Button3.qml</file>
-        <file>Button/ComBox.qml</file>
-        <file>Button/Button4.qml</file>
-        <file>text/LineEdit.qml</file>
-        <file>text/Text0.qml</file>
-        <file>MyText.qml</file>
         <file>image/text.png</file>
-        <file>dashbordui/Dashbord1.qml</file>
-        <file>dashbordui/Dashbord2.qml</file>
-        <file>dashbordui/Dashbord3.qml</file>
-        <file>dashbordui/Dashbord0.qml</file>
-        <file>dashbordui/Dashbord4.qml</file>
-        <file>progressbarui/Processbar0.qml</file>
-        <file>dashbordui/Dashbord5.qml</file>
         <file>image/video.png</file>
-        <file>chart/ChartPie.qml</file>
-        <file>MyChart.qml</file>
         <file>image/chart.png</file>
-        <file>chart/ChartArea.qml</file>
-        <file>chart/ChartBoxPlot.qml</file>
-        <file>chart/ChartHorizontalBarSeries.qml</file>
-        <file>chart/ChartHorizontalPercentBarSeries.qml</file>
-        <file>chart/ChartHorizontalStackedBarSeries.qml</file>
-        <file>chart/ChartSpline.qml</file>
-        <file>chart/ChartLine.qml</file>
-        <file>chart/ChartPercentBarSeries.qml</file>
-        <file>chart/ChartScatterSeries.qml</file>
-        <file>chart/ChartStackedBarSeries.qml</file>
-        <file>chart/ChartBarSeries.qml</file>
+        <file>qml/HomeTitleBar.qml</file>
+        <file>qml/MainContent.qml</file>
+        <file>qml/MyButton.qml</file>
+        <file>qml/MyChart.qml</file>
+        <file>qml/MyDashBord.qml</file>
+        <file>qml/MyParticle.qml</file>
+        <file>qml/MyProgressbar.qml</file>
+        <file>qml/MyTabBarButton.qml</file>
+        <file>qml/MyText.qml</file>
+        <file>qml/text/LineEdit.qml</file>
+        <file>qml/text/Text0.qml</file>
+        <file>qml/progressbarui/Processbar0.qml</file>
+        <file>qml/particle/ParticleColor.qml</file>
+        <file>qml/dashbordui/Dashbord1.qml</file>
+        <file>qml/dashbordui/Dashbord2.qml</file>
+        <file>qml/dashbordui/Dashbord3.qml</file>
+        <file>qml/dashbordui/Dashbord4.qml</file>
+        <file>qml/dashbordui/Dashbord5.qml</file>
+        <file>qml/chart/ChartArea.qml</file>
+        <file>qml/chart/ChartBarSeries.qml</file>
+        <file>qml/chart/ChartBoxPlot.qml</file>
+        <file>qml/chart/ChartHorizontalBarSeries.qml</file>
+        <file>qml/chart/ChartHorizontalPercentBarSeries.qml</file>
+        <file>qml/chart/ChartHorizontalStackedBarSeries.qml</file>
+        <file>qml/chart/ChartLine.qml</file>
+        <file>qml/chart/ChartPercentBarSeries.qml</file>
+        <file>qml/chart/ChartPie.qml</file>
+        <file>qml/chart/ChartScatterSeries.qml</file>
+        <file>qml/chart/ChartSpline.qml</file>
+        <file>qml/chart/ChartStackedBarSeries.qml</file>
+        <file>qml/button/Button0.qml</file>
+        <file>qml/button/Button1.qml</file>
+        <file>qml/button/Button2.qml</file>
+        <file>qml/button/Button3.qml</file>
+        <file>qml/button/Button4.qml</file>
+        <file>qml/button/ComBox.qml</file>
+        <file>qml/button/ImgTxtButton.qml</file>
+        <file>qml/button/MyCheckBox.qml</file>
+        <file>qml/button/SwitchButton.qml</file>
+        <file>qml/button/TabBarButtonH.qml</file>
+        <file>qml/button/TabBarButtonV.qml</file>
+        <file>qml/button/WaveButton.qml</file>
+        <file>qml/main.qml</file>
+        <file>qml/QmlTabButton.qml</file>
+        <file>qml/dashbordui/Dashbord0.qml</file>
     </qresource>
 </RCC>

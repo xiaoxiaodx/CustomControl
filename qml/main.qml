@@ -94,30 +94,30 @@ Window {
             id:myButton
 
             Component.onCompleted: {
-                myButton.myModel.append({qmlSrc:"qrc:/Button/Button0.qml"})
-                myButton.myModel.append({qmlSrc:"qrc:/Button/Button1.qml"})
-                myButton.myModel.append({qmlSrc:"qrc:/Button/Button2.qml"})
-                myButton.myModel.append({qmlSrc:"qrc:/Button/Button3.qml"})
-                myButton.myModel.append({qmlSrc:"qrc:/Button/Button4.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/qml/button/Button0.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/qml/button/Button1.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/qml/button/Button2.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/qml/button/Button3.qml"})
+                myButton.myModel.append({qmlSrc:"qrc:/qml/button/Button4.qml"})
             }
         }
         MyText{
             id:myText
 
             Component.onCompleted: {
-                myText.myModel.append({qmlSrc:"qrc:/text/Text0.qml"})
+                myText.myModel.append({qmlSrc:"qrc:/qml/text/Text0.qml"})
 
             }
         }
         MyDashBord{
             id:myDashBord
             Component.onCompleted: {
-                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord0.qml"})
-                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord1.qml"})
-                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord2.qml"})
-                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord3.qml"})
-                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord4.qml"})
-                myDashBord.myModel.append({qmlSrc:"qrc:/dashbordui/Dashbord5.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/qml/dashbordui/Dashbord0.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/qml/dashbordui/Dashbord1.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/qml/dashbordui/Dashbord2.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/qml/dashbordui/Dashbord3.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/qml/dashbordui/Dashbord4.qml"})
+                myDashBord.myModel.append({qmlSrc:"qrc:/qml/dashbordui/Dashbord5.qml"})
 
             }
         }
@@ -125,7 +125,7 @@ Window {
         MyProgressbar{
             id:myProgressbar
             Component.onCompleted: {
-                myProgressbar.myModel.append({qmlSrc:"qrc:/progressbarui/Processbar0.qml"})
+                myProgressbar.myModel.append({qmlSrc:"qrc:/qml/progressbarui/Processbar0.qml"})
 
 
             }
@@ -135,18 +135,18 @@ Window {
         MyChart{
             id:myMyChart
             Component.onCompleted: {
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartPie.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartScatterSeries.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartLine.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartSpline.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartArea.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartBoxPlot.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartBarSeries.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartHorizontalBarSeries.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartPercentBarSeries.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartHorizontalPercentBarSeries.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartStackedBarSeries.qml"})
-                myMyChart.myModel.append({qmlSrc:"qrc:/chart/ChartHorizontalStackedBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartPie.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartScatterSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartLine.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartSpline.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartArea.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartBoxPlot.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartHorizontalBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartPercentBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartHorizontalPercentBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartStackedBarSeries.qml"})
+                myMyChart.myModel.append({qmlSrc:"qrc:/qml/chart/ChartHorizontalStackedBarSeries.qml"})
 
 
             }
