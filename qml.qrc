@@ -68,5 +68,6 @@
         <file>image/particleA.png</file>
         <file>image/matchmask.png</file>
         <file>qml/particle/Particle3.qml</file>
+        <file>image/glowdot.png</file>
     </qresource>
 </RCC>
