@@ -72,6 +72,7 @@ Window {
                 tabbarBtn.barModel.append({txtStr:qsTr("进度条"),imgSrc:"qrc:/image/processBar.png",imgSrcEnter:"qrc:/image/processBar.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("图表"),imgSrc:"qrc:/image/chart.png",imgSrcEnter:"qrc:/image/chart.png"})
                 tabbarBtn.barModel.append({txtStr:qsTr("粒子效果"),imgSrc:"qrc:/image/particle.png",imgSrcEnter:"qrc:/image/particle.png"})
+                tabbarBtn.barModel.append({txtStr:qsTr("时间日期"),imgSrc:"qrc:/image/date.png",imgSrcEnter:"qrc:/image/date.png"})
 
             }
         }
@@ -160,7 +161,44 @@ Window {
                 myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle0.qml"});
                 myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle1.qml"});
                 myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle2.qml"});
+               // myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle4.qml"});
                 myParticle.myModel.append({qmlSrc:"qrc:/qml/particle/Particle3.qml"});
+            }
+        }
+
+
+
+        ListModel{
+            id:calendarEventModel
+
+            function getDateEvent(tmpData){
+
+                var dayNum = Qt.formatDate(tmpData,"dd")-1
+                //console.debug("getDateEvent:    "+dayNum + "  "+calendarEventModel.count+"  "+calendarEventModel.get(dayNum))
+
+
+                if(calendarEventModel.count == 0)
+                    return "#191919"
+                if(calendarEventModel.get(dayNum)=== undefined)
+                    return "#191919"
+
+                if(calendarEventModel.get(dayNum).type==="1")
+                    return "#3A3D41";
+                else if(calendarEventModel.get(dayNum).type==="2")
+                    return "#f64054"
+                else if(calendarEventModel.get(dayNum).type==="0")
+                    return "#191919"
+
+                return "#191919"
+            }
+        }
+
+        MyDate{
+            id:myDate
+            Component.onCompleted: {
+
+                myDate.myModel.append({qmlSrc:"qrc:/qml/date/MyCalendar.qml"})
+
             }
         }
     }

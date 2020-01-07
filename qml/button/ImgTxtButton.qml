@@ -37,10 +37,6 @@ Rectangle {
     property string txtPressColor: txtNorColor
     property string txtHoverColor: txtNorColor
 
-
-
-
-
     signal click();
 
 

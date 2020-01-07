@@ -69,5 +69,17 @@
         <file>image/matchmask.png</file>
         <file>qml/particle/Particle3.qml</file>
         <file>image/glowdot.png</file>
+        <file>qml/particle/Particle4.qml</file>
+        <file>qml/date/MyCalendar.qml</file>
+        <file>qml/MyDate.qml</file>
+        <file>image/mouthnext.png</file>
+        <file>image/mouthnext_p.png</file>
+        <file>image/mouthpre.png</file>
+        <file>image/mouthpre_p.png</file>
+        <file>image/yearnext.png</file>
+        <file>image/yearnext_p.png</file>
+        <file>image/yearpre.png</file>
+        <file>image/yearpre_p.png</file>
+        <file>image/date.png</file>
     </qresource>
 </RCC>
